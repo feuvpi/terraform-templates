@@ -14,6 +14,9 @@ Welcome to the Terraform Basics repository! This repository is designed to help 
   - [Modules](#modules)
   - [Scripts](#scripts)
   - [Documentation](#documentation)
+  - [Managing Credentials](#managing-credentials)
+    - [Environment Variables](#environment-variables)
+    - [Credentials Files](#credentials-files)
 
 ## Introduction
 
@@ -55,3 +58,32 @@ To install Terraform, follow the instructions for your operating system: [https:
 ## Documentation
 
 Additional documentation can be found in the `docs` directory.
+
+## Managing Credentials
+
+To manage your AWS and Azure credentials securely, you can use environment variables, credentials files, or a secrets manager.
+
+### Environment Variables
+
+You can set your AWS and Azure credentials as environment variables on your local machine. For AWS, you can set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables. For Azure, you can set the `ARM_CLIENT_ID`, `ARM_CLIENT_SECRET`, `ARM_SUBSCRIPTION_ID`, and `ARM_TENANT_ID` environment variables.
+
+### Credentials Files
+
+You can also store your AWS and Azure credentials in credentials files. For AWS, you can create a `~/.aws/credentials` file with the following content:
+
+```
+[default]
+aws_access_key_id = YOUR_ACCESS_KEY
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+```
+For Azure, you can create a `~/.azure/credentials` file with the following content:
+
+```
+[default]
+subscription_id = YOUR_SUBSCRIPTION_ID
+client_id = YOUR_CLIENT_ID
+secret = YOUR_CLIENT_SECRET
+tenant = YOUR_TENANT_ID
+```
+
+
